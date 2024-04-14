@@ -1,4 +1,4 @@
-with customers as ( commit 12
+with customers as ( commit to merge into master branch
 
     select * from {{ ref('stg_customers') }}
 
