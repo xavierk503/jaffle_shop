@@ -1,4 +1,4 @@
-with customers as ( **** change by branch 1 developer
+with customers as ( **** change by branch 1 developer, this is new thig****** in test branch
 
     select * from {{ ref('stg_customers') }}
 
