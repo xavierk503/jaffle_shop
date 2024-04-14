@@ -1,4 +1,5 @@
-with customers as ( commit to merge into master branch
+
+with customers as ( commit 12 and commited by another devloper
 
     select * from {{ ref('stg_customers') }}
 
