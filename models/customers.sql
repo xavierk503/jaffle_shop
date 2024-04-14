@@ -1,4 +1,4 @@
-with customers as (
+with customers as ( **** change by branch 1 developer
 
     select * from {{ ref('stg_customers') }}
 
