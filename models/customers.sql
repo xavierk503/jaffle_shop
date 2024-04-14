@@ -1,4 +1,5 @@
-with customers as ( commit 12 and commited by another devloper and trying to push from test branch to remote master branch..hope this works
+
+with customers as ( commit 12 and commited by another devloper and changes from master****
 
     select * from {{ ref('stg_customers') }}
 
