@@ -1,4 +1,4 @@
-with customers as ( commit 12
+with customers as ( commit 12 and commited by another devloper
 
     select * from {{ ref('stg_customers') }}
 
