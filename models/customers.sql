@@ -1,5 +1,5 @@
 
-with customers as ( commit 12 and commited by another devloper
+with customers as ( commit 12 and commited by another devloper and changes from master****
 
     select * from {{ ref('stg_customers') }}
 
