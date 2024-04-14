@@ -1,4 +1,4 @@
-with customers as ( commit 10
+with customers as ( commit 11
 
     select * from {{ ref('stg_customers') }}
 
