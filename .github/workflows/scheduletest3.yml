@@ -6,8 +6,9 @@ name: scheduletest3
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   schedule:
-    - cron: '40 8 * * *'
-    - cron: '40 9 * * *'
+    - cron: '10 13 * * *'
+    - cron: '10 14 * * *'
+    - cron: '5 13,14,15 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,16 +27,19 @@ jobs:
       - name: Echo current date
         run: echo $NOW # Gives "2022-12-11T01:42:20"
       - name: test run on if condition7
-        if: github.event.schedule == '40 7 * * *'
-        run: echo Hi this is test run for 40 7
+        if: github.event.schedule == '10 13 * * *'
+        run: echo Hi this is test run for 10 13
       - name: regular run of schedule
         run: echo Hi this is regular run of schedule
       - name: test run on if condition8
-        if: github.event.schedule == '40 8 * * *'
-        run: echo Hi this is test run for 40 8
+        if: github.event.schedule == '10 14 * * *'
+        run: echo Hi this is test run for 10 14
       - name: test run on if condition9
         if: github.event.schedule == '40 9 * * *'
         run: echo Hi this is test run for 40 9
+      - name: test run on if condition131415
+        if: github.event.schedule == '5 13,14,15 * * *'
+        run: echo Hi this is test run for 131415
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
