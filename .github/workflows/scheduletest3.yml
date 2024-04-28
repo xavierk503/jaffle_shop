@@ -35,6 +35,11 @@ jobs:
       - name: test run on if condition7
         if: github.event.schedule == '43 7 * * *'
         run: echo Hi this is test run for 43 7
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
 
         
         
