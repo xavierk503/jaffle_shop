@@ -33,5 +33,5 @@ jobs:
         uses: mwhitaker/dbt-action@master
         with:
           dbt_command: "dbt run -m test_tag1"
-          dbt_project_folder: "jaffle_shop"
+
 
