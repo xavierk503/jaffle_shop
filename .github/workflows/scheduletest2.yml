@@ -26,7 +26,7 @@ jobs:
       - name: test run on if condition
         run: echo Hi this is test run
       - run: |
-          echo A comment on PR $NUMBER
+          echo A comment on PR $SCHEDULEEVENT
         env:
-          NUMBER: ${{ github.event.schedule}}
+          SCHEDULEEVENT: ${{ github.event.schedule}}
 
