@@ -20,15 +20,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Set current date as env variable
-        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
-      - name: Echo current date
-        run: echo $NOW # Gives "2022-12-11T01:42:20"
-      - name: Echo schedule info
-        run: echo github.event.schedule
-      - name: test run on if condition
-        if: github.event.schedule == '0 6 * * *'
-        run: echo Hi this is test run with if condition bk
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: dbt-deps
+        uses: mwhitaker/dbt-action@master
+        with:
+          dbt_command: "dbt deps --profiles-dir ./.github/dbt"
+          
       - name: dbt-action
         uses: mwhitaker/dbt-action@master
         with:
