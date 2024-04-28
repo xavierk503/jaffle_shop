@@ -28,7 +28,7 @@ jobs:
         if: github.event.schedule == '03 13 * * *'
         run: echo Hi this is test run for 03 13
       - name: regular run of schedule
-        run: hi this Regular run of schedule 
+        run: echo Hi this is regular run of schedule
       - name: test run on if condition14
         if: github.event.schedule == '03 14 * * *'
         run: echo Hi this is test run for 03 14
