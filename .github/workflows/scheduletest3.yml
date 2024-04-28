@@ -24,6 +24,8 @@ jobs:
         run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
       - name: Echo current date
         run: echo $NOW # Gives "2022-12-11T01:42:20"
+      - name: Echo schedule info
+        run: echo github.event.schedule
       - name: test run on if condition
         if: github.event.schedule == '*/5 * * * *'
         run: echo Hi this is test run with if condition bk
