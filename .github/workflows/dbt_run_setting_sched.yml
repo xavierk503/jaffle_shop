@@ -25,7 +25,9 @@ jobs:
       - name: dbt-deps
         uses: mwhitaker/dbt-action@master
         with:
-          dbt_command: "dbt deps --profiles-dir /home/runner/work/jaffle_shop/jaffle_shop/.github/dbt"
+          dbt_command: "dbt deps --profiles-dir ."
+        env:
+          DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
           
       - name: dbt-action
         uses: mwhitaker/dbt-action@master
