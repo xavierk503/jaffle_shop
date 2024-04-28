@@ -25,4 +25,5 @@ jobs:
       - name: Echo current date
         run: echo $NOW # Gives "2022-12-11T01:42:20"
       - name: test run on if condition
-        run: echo Hi this is test run
+        if: github.event.schedule = '*/5 * * * *'
+        run: echo Hi this is test run with if condition bk
