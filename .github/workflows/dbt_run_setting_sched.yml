@@ -6,7 +6,7 @@ name: dbt_run_setting_sched
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   schedule:
-    - cron: '*/45 * * * *'
+    - cron: '0 6 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,14 +27,13 @@ jobs:
       - name: Echo schedule info
         run: echo github.event.schedule
       - name: test run on if condition
-        if: github.event.schedule == '*/45 * * * *'
+        if: github.event.schedule == '0 6 * * *'
         run: echo Hi this is test run with if condition bk
       - name: dbt-action
         uses: mwhitaker/dbt-action@master
         with:
           dbt_command: "dbt run -m test_tag1"
         env:
-          DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
           account: wuihetv-mt05564
           database: SEEKMART_OMS
           password: Mytestacc1$
