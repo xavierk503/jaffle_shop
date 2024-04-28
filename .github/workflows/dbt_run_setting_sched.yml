@@ -33,9 +33,5 @@ jobs:
         uses: mwhitaker/dbt-action@master
         with:
           dbt_command: "dbt run --select test_tag1 --profiles-dir ./.github/dbt"
-        env:
-          - OS:
-          - Python:
-          - dbt:
 
 
