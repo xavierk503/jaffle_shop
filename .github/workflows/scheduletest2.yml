@@ -6,7 +6,7 @@ name: scheduletest2
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '00 19 * * *'
 
   workflow_dispatch:
 
@@ -25,4 +25,8 @@ jobs:
         run: echo $NOW # Gives "2022-12-11T01:42:20"
       - name: test run on if condition
         run: echo Hi this is test run
+      - run: |
+          echo A comment on PR $NUMBER
+        env:
+          NUMBER: ${{ github.event.schedule}}
 
