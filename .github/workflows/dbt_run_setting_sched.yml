@@ -32,6 +32,6 @@ jobs:
       - name: dbt-action
         uses: mwhitaker/dbt-action@master
         with:
-          dbt_command: "dbt run --select test_tag1 --profiles-dir ./.github/dbt"
+          dbt_command: "dbt run --select test_tag1"
 
 
