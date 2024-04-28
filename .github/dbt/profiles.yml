@@ -1,0 +1,13 @@
+jaffle_shop:
+  outputs:
+    dev:
+      account: wuihetv-mt05564
+      database: SEEKMART_OMS
+      password: Mytestacc1$
+      role: ACCOUNTADMIN
+      schema: L3_CONSUMPTION
+      threads: 1
+      type: snowflake
+      user: bikkoi503
+      warehouse: COMPUTE_WH
+  target: dev
